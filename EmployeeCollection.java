@@ -60,7 +60,8 @@ class EmployeeCollection{
                     ename = getString.nextLine();
                     System.out.print("Enter Employee Salary: ");
                     esalary = getInput.nextInt();
-                    System.out.println("-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=/n");
+                    System.out.println("-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=");
+                    System.out.println("");
 
                     employees.add(new Employee(eno, ename, esalary));
                 break;
@@ -73,12 +74,28 @@ class EmployeeCollection{
                         Employee e = i.next();
                         System.out.println(e);
                     }
-                    System.out.println("-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=/n");
+                    System.out.println("-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=");
                 break;
 
                 // SEARCH
                 case 3:
-                    
+                    Boolean found = false;
+                    System.out.println("-=-=-=-=-= SEARCH EMPLOYEE DATA -=-=-=-=-=");
+                    System.out.print("Enter Employee No: ");
+                    eno = getInput.nextInt();
+                    i = employees.iterator();
+                    while (i.hasNext()) {
+                        Employee e = i.next();
+                            if(e.getEmployee_no() == eno){
+                                System.out.println(e);
+                                found = true;
+                            }
+                    }
+
+                    if(!found){
+                        System.out.println("RECORD NOT FOUND!");
+                    }
+                    System.out.println("-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=/n");
                 break;
             }
 
