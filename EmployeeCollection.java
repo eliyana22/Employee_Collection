@@ -43,8 +43,8 @@ class EmployeeCollection{
             System.out.println("1. INSERT");
             System.out.println("2. DISPLAY");
             System.out.println("3. SEARCH");
-            System.out.println("4. UPDATE");
-            System.out.println("5. DELETE");
+            System.out.println("4. DELETE");
+            System.out.println("5. UPDATE");
             System.out.print("ENTER YOUR CHOICE: ");
             data = getInput.nextInt();
 
@@ -101,7 +101,7 @@ class EmployeeCollection{
                     System.out.println("");
                 break;
 
-                // SEARCH
+                // DELETE
                 case 4:
                     found = false;
                     System.out.println("-=-=-=-=-= DELETE EMPLOYEE DATA -=-=-=-=-=");
@@ -125,6 +125,37 @@ class EmployeeCollection{
                     System.out.println("-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=");
                     System.out.println("");
                 break;
+
+                // SEARCH
+            case 5:
+                found = false;
+                System.out.println("-=-=-=-=-= UPDATE EMPLOYEE DATA -=-=-=-=-=");
+                System.out.print("Enter Employee No. to Update: ");
+                eno = getInput.nextInt();
+                
+                ListIterator<Employee> li = employees.listIterator();
+                while (li.hasNext()) {
+                    Employee e = li.next();
+                    if (e.getEmployee_no() == eno) {
+                        System.out.println("");
+                        System.out.println("Update the following:");
+                        System.out.print("Enter Employee Name: ");
+                        ename = getString.nextLine();
+                        System.out.print("Enter Employee Salary: ");
+                        esalary = getInput.nextInt();
+
+                        li.set(new Employee(eno, ename, esalary));
+                        found = true;
+                    }
+                }
+
+                if (!found) {
+                    System.out.println("RECORD NOT FOUND!");
+                } else {
+                    System.out.println("RECORD IS UPDATED SUCCESSFULLY!");
+                }
+                System.out.println("-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=");
+                System.out.println("");
             }
 
 
