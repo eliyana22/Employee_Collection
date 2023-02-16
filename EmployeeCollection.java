@@ -51,6 +51,7 @@ class EmployeeCollection{
             System.out.println("");
 
             switch(data){
+                // INSERT
                 case 1:
                     System.out.println("-=-=-=-=-= INSERT EMPLOYEE DATA -=-=-=-=-=");
                     System.out.print("Enter Employee No: ");
@@ -60,6 +61,24 @@ class EmployeeCollection{
                     System.out.print("Enter Employee Salary: ");
                     esalary = getInput.nextInt();
                     System.out.println("-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=/n");
+
+                    employees.add(new Employee(eno, ename, esalary));
+                break;
+
+                // DISPLAY
+                case 2:
+                    System.out.println("-=-=-=-=-= DISPLAY EMPLOYEE DATA -=-=-=-=-=");
+                    Iterator<Employee> i = employees.iterator();
+                    while(i.hasNext()){
+                        Employee e = i.next();
+                        System.out.println(e);
+                    }
+                    System.out.println("-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=/n");
+                break;
+
+                // SEARCH
+                case 3:
+                    
                 break;
             }
 
