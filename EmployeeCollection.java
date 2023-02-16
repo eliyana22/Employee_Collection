@@ -75,6 +75,7 @@ class EmployeeCollection{
                         System.out.println(e);
                     }
                     System.out.println("-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=");
+                    System.out.println("");
                 break;
 
                 // SEARCH
@@ -83,6 +84,7 @@ class EmployeeCollection{
                     System.out.println("-=-=-=-=-= SEARCH EMPLOYEE DATA -=-=-=-=-=");
                     System.out.print("Enter Employee No: ");
                     eno = getInput.nextInt();
+
                     i = employees.iterator();
                     while (i.hasNext()) {
                         Employee e = i.next();
@@ -95,7 +97,33 @@ class EmployeeCollection{
                     if(!found){
                         System.out.println("RECORD NOT FOUND!");
                     }
-                    System.out.println("-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=/n");
+                    System.out.println("-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=");
+                    System.out.println("");
+                break;
+
+                // SEARCH
+                case 4:
+                    found = false;
+                    System.out.println("-=-=-=-=-= DELETE EMPLOYEE DATA -=-=-=-=-=");
+                    System.out.print("Enter Employee No: ");
+                    eno = getInput.nextInt();
+
+                    i = employees.iterator();
+                    while (i.hasNext()) {
+                        Employee e = i.next();
+                            if(e.getEmployee_no() == eno){
+                                i.remove();
+                                found = true;
+                            }
+                    }
+
+                    if(!found){
+                        System.out.println("RECORD NOT FOUND!");
+                    } else {
+                        System.out.println("RECORD IS DELETED SUCCESSFULLY!");
+                    }
+                    System.out.println("-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=");
+                    System.out.println("");
                 break;
             }
 
